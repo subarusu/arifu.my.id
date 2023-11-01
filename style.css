@@ -1,0 +1,23 @@
+.body {
+  background-color: #664304;
+  text-align: center;
+}
+
+.border {
+}
+
+.button {
+}
+
+.h1 {
+  margin: 10px;
+  font-family: Monospace;
+  color: white;
+}
+
+.footer {
+  size: 10px;
+  margin: 10px;
+  font-family: Monospace;
+  color: white;
+}
