@@ -14,15 +14,15 @@
     </div>
     <!-- box 1 -->
     <div>
-      <form action="auto_indent.php" method="post">
+      <form>
         <div class="input">
           <textarea class="textbox" name="input_text" rows="14" cols="60"></textarea>
         </div>
         <div class="button">
-          <button type="submit">Indent</button>
+          <button type="button" onclick="indentText()">Indent</button>
         </div>
         <div class="input">
-          <textarea class="textbox" name="output_text" rows="14" cols="60" readonly></textarea>
+          <textarea class="textbox" name="output_text" id="output_text" rows="14" cols="60" readonly></textarea>
         </div>
       </form>
     </div>
@@ -31,5 +31,19 @@
       <i>please support this web disable ads block♥️</i>
     </div>
   </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettier/2.4.0/prettier.min.js"></script>
+<script>
+  function autoIndent(text) {
+    const formattedText = prettier.format(text, { parser: "babel" });
+    return formattedText;
+  }
+
+  function indentText() {
+    const inputText = document.querySelector('textarea[name="input_text"]').value;
+    const outputText = document.querySelector('textarea[name="output_text"]');
+    outputText.value = autoIndent(inputText);
+  }
+</script>
+
 </body>
 </html>
