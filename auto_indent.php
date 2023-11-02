@@ -3,11 +3,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ambil teks dari "textbox 1" dan membersihkan masukan
     $input_text = isset($_POST['input_text']) ? htmlspecialchars($_POST['input_text']) : '';
 
-    // Lakukan auto-indentation, misalnya dengan mengganti baris baru dengan spasi/tab sesuai kebutuhan Anda.
+    // Lakukan auto-indentation
     $indented_text = autoIndent($input_text);
 
     // Tampilkan hasil di "textbox 2"
-    echo '<textarea class="textbox" name="output_text" rows="14" cols="60" readonly>' . $indented_text . '</textarea>';
+    echo '<textarea class="textbox" name="output_text" rows="14" cols="60" readonly>' . htmlspecialchars($indented_text) . '</textarea>';
 }
 
 function autoIndent($text) {
